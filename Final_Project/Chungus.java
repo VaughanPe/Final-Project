@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Chungus extends Actor
 {
+    public int chungusX = getX();
+    public int chungusY = getY();
     public Chungus()
     {
         getImage().scale(75,75);
@@ -20,12 +22,13 @@ public class Chungus extends Actor
      */
     public void act() 
     {
+        
        if(Greenfoot.isKeyDown("z") == true && positionReset > 0)
        {
           setLocation(350,600); 
           
        } 
-       positionReset = 0;
+       
        if(Greenfoot.isKeyDown("d") == true)
        {
            move(5);
