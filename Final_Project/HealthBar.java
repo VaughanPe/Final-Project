@@ -41,10 +41,14 @@ public class HealthBar extends Actor
         warning = Color.YELLOW;
         danger = Color.RED;
 
-        max = 1000;
-        current = 600;
+        max = 10;
+        current = 10;
         target = current;
         speed = 1;
+        
+        
+            
+        
 
         updateBar();
     }

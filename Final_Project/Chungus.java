@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Chungus extends Actor
 {
-    public int chungusX = getX();
-    public int chungusY = getY();
+
+   
     public Chungus()
     {
         getImage().scale(75,75);
