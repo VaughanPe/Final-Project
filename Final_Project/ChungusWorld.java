@@ -2,10 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import javax.swing.JOptionPane;
 
 /**
- * Write a description of class ChungusWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
+ * Author: Vaughan Pelletier
+ * Last edited: 1/29/2019
+ * (Changing characters is a hidden feature)
+ * (i was unable to figure out a way to use a loop here)
  */
 public class ChungusWorld extends World
 {

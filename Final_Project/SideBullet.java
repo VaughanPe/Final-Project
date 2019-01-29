@@ -38,11 +38,15 @@ public class SideBullet extends Actor
             
         }
         //otherwise if bullet is touching the bottom of the world
-        else if(getX() == getWorld().getWidth()/2)
+        else if(getX() == getWorld().getWidth()/2+10)
         {
             //delete the object touching the bottom
             getWorld().removeObject(this);
         }
-        
+        else if(getX() == getWorld().getWidth()/2-10)
+        {
+            //delete the object touching the bottom
+            getWorld().removeObject(this);
+        }
     }    
 }
