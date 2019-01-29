@@ -1,27 +1,32 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BigBullet here.
+ * Write a description of class SideBullet here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BigBullet extends Actor
+public class SideBullet extends Actor
 {
-    /**
-     * Act - do whatever the BigBullet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public BigBullet()
+    public SideBullet()
     {
-        getImage().scale(200,200);
-        setRotation(180);
+        getImage().scale(100,100);
+        setRotation(315);
     }
 
     public void act() 
     {
-
-        setLocation(getWorld().getWidth()/2,getY()+10);
+        //if the x location of the anchor is less than 400, move right
+        if(getX() < 400)
+        {
+            setLocation(getX()+5,getWorld().getHeight()/2);
+        }
+        //if the x location of the anchor is more than 400, move left, and change the angle it's at
+        else if(getX() > 400)
+        {
+            setRotation(135);
+            setLocation(getX()-5,getWorld().getHeight()/2);  
+        }
         HealthBar health = (HealthBar)getWorld().getObjects(HealthBar.class).get(0);
         if(isTouching(Chungus.class) == true)
         {
@@ -33,10 +38,11 @@ public class BigBullet extends Actor
             
         }
         //otherwise if bullet is touching the bottom of the world
-        else if(getY() == 690)
+        else if(getX() == getWorld().getWidth()/2)
         {
             //delete the object touching the bottom
             getWorld().removeObject(this);
         }
+        
     }    
 }

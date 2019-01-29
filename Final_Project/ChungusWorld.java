@@ -9,24 +9,23 @@ import javax.swing.JOptionPane;
  */
 public class ChungusWorld extends World
 {
-    public boolean addLinux = true;
+
     private boolean gameStart = true;
-    
+    private ScoreBoard score;
     private String playerOneName = "1";
     private String playerTwoName = "2";
     private int nameCount = 1;
-    
-    
-    
+    private Chungus chungus = new Chungus();
+
     /**
      * Constructor for objects of class ChungusWorld.
      * 
      */
-     public ChungusWorld()
-     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    public ChungusWorld()
+    {    
+        // Creates a new world with 800x700 cells with a cell size of 1x1 pixels.
         super(800, 700, 1); 
-        
+        //adds the objects needed to start the game, such as chungus, the chungus hunters the healthbar and the scoreboard
         addObject(new ChungusHunter(),getWidth()/2,getHeight()/2-280);
         addObject(new Chungus(),getWidth()/2,600);
         addObject(new MiniChungusHunter(),getWidth()/2+150,150);
@@ -36,42 +35,65 @@ public class ChungusWorld extends World
         addObject(new MiniChungusHunter(),getWidth()/2+350,150);
         addObject(new MiniChungusHunter(),getWidth()/2-350,150);
         addObject(new HealthBar(),getWidth()/2-280,getHeight()-20);
-     }
+        score = new ScoreBoard();
+        addObject(score,getWidth()/2,200);
+    }
+    //an int to see whether or not dialogue has been placed yet
     public int dialogueCount1 = 1;
+    //a boolean to determine whether the start message has been placed yet
     private boolean startMessage = true;
-    
+    public void update()
+    {
+        //add a value to the current score
+        score.addToScore();
+    }
+
     public void act()
     {
+        //if this number is equal to one
         if(nameCount == 1)
         {
-         playerOneName = JOptionPane.showInputDialog( "Please enter your name, Player One:", null );
-         nameCount = 0;
-         showText(playerOneName,getWidth()/2-280,getHeight()-45);
-       }
-        
+            //display a box for the player to put their name in
+            playerOneName = JOptionPane.showInputDialog( "Please enter your name, Player One:", null );
+            //set nameCount to 0
+            nameCount = 0;
+            //display the player's name in the bottom left corner
+            showText(playerOneName,getWidth()/2-280,getHeight()-45);
+        }
+        //reference to the healthbar class
         HealthBar health = getObjects(HealthBar.class).get(0);
-        
+        //if startmessage is true
         if(startMessage == true)
         {
-            showText("Press Z for 2 player and space to start game",getWidth()/2,getHeight()/2);                                               
+            //display this text in the middle of the world
+            showText("Press Z for 2 player and space to start game, W A S D to move and K to fire",getWidth()/2,getHeight()/2);
+            showText("Shoot the big hunter in the middle to win" ,getWidth()/2,getHeight()/2+30);
+            showText("don't hit or touch the rockets or you'll take damage",getWidth()/2,getHeight()/2+60);
         }
-        
+        //if the space key is pressed and this variable is true
         if(Greenfoot.isKeyDown("space") == true && gameStart == true)
         {
+            //delete the start message
             showText("",getWidth()/2,getHeight()/2);
+            showText("",getWidth()/2,getHeight()/2+30);
+            showText("",getWidth()/2,getHeight()/2+60);
+            //set the gameStart variable to false
             gameStart = false;
+            //disable the start message from popping up again
             startMessage = false;
         }
-        if(Greenfoot.getRandomNumber(1000) <= 15)
-           {
-             addObject(new Bullet(),getWidth()/2+150,150);
-             addObject(new Bullet(),getWidth()/2-150,150);
+        //if a random number is under 15 and this variable is false
+        if(Greenfoot.getRandomNumber(1000) <= 15 && gameStart == false)
+        {
+            //add six new bullet objects at different locations
+            addObject(new Bullet(),getWidth()/2+150,150);
+            addObject(new Bullet(),getWidth()/2-150,150);
             addObject(new Bullet(),getWidth()/2+250,150);
             addObject(new Bullet(),getWidth()/2-250,150);
             addObject(new Bullet(),getWidth()/2+350,150);
             addObject(new Bullet(),getWidth()/2-350,150);
-            
-         }
-        
+
+        }
+
     }
 }

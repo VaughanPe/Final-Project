@@ -9,15 +9,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bullet extends Actor
 {
     boolean bounce = true;
-    
+
     public Bullet()    
     {
+        //sets the direction the objects is facing
         setRotation(Greenfoot.getRandomNumber(180));
+        //sets the size of the image/object
         getImage().scale(30,30);
-        bounce = true;
-        
-    }
 
+    }
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -25,26 +25,33 @@ public class Bullet extends Actor
     public void act() 
     {
         move(5);
-        
+
         HealthBar health = (HealthBar)getWorld().getObjects(HealthBar.class).get(0);
+        //if bullet is touching chungus
         if(isTouching(Chungus.class) == true)
         {
-            getWorld().removeObject(this);
+            //take away 1 health
             health.add(-1);
-            
+            //delete the bullet touching chungus
+            getWorld().removeObject(this);
+
         }
-        
+        //otherwise if bullet is touching the bottom of the world
         else if(getY() == 690)
         {
+            //delete the object touching the bottom
             getWorld().removeObject(this);
         }
+
+        //if your health is zero
         if(health.getCurrent() == 0)
         {
-            
-            
+
+            //place text telling the player they lost
             getWorld().showText("You Lose",getWorld().getWidth()/2,getWorld().getHeight()/2);
+            //stop the program
             Greenfoot.stop();
         }
-        
+
     }    
 }

@@ -10,8 +10,9 @@ public class MiniChungusHunter extends Actor
 {
     public MiniChungusHunter()
     {
-       
+        //sets the size of the object
         getImage().scale(45,45);
+        //faces the object the right way
         setRotation(90);
     }
     /**

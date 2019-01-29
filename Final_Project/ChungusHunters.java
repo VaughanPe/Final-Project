@@ -14,6 +14,6 @@ public class ChungusHunters extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        //Just kinda there, forgot what i made this class for.
     }    
 }

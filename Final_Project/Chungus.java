@@ -8,42 +8,87 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Chungus extends Actor
 {
+    //tells the program the game hasn't started yet
+    private boolean gameStart = false;
+    private int index = 1;
 
-   
     public Chungus()
     {
-        getImage().scale(75,75);
-        
+        //sets the size of the image
+        getImage().scale(50,50);
+
     }
-    int positionReset = 1;
+
     /**
      * Act - do whatever the Chungus wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        
-       if(Greenfoot.isKeyDown("z") == true && positionReset > 0)
-       {
-          setLocation(350,600); 
-          
-       } 
-       
-       if(Greenfoot.isKeyDown("d") == true)
-       {
-           move(5);
-       }
-       if(Greenfoot.isKeyDown("a") == true)
-       {
-           move(-5);
-       }
-       if(Greenfoot.isKeyDown("w") == true)
-       {
-           setLocation(getX(),getY()-5);
-       } 
-       if(Greenfoot.isKeyDown("s") == true)
-       {
-           setLocation(getX(),getY()+5);
-       }
+        GreenfootImage[] characters; 
+        characters = new GreenfootImage[]{new GreenfootImage("chungus 2 2.0.png"),new GreenfootImage("tux.png")};
+
+        //if the q key is pressed, set index to one and change the image to idx 1, then set the size of the image
+        if(Greenfoot.isKeyDown("q") == true)
+        {
+         setImage(characters[1]);
+         getImage().scale(50,50);
+         index = 1;
+        }
+        //if the e key is pressed, set index to zero and change the image to idx 0, then set the size of the image
+        if(Greenfoot.isKeyDown("e") == true)
+        {
+         setImage(characters[0]);
+         getImage().scale(50,50);
+         index = 0;
+        }
+        //if the space key is pressed
+        if(Greenfoot.isKeyDown("space") == true)
+        {
+            //tell the actor that game has started
+            gameStart = true;
+        }
+
+        //when the D key is pressed
+        if(Greenfoot.isKeyDown("d") == true)
+        {
+            //move the actor to the right
+            move(5);
+
+        }
+        //when the A key is pressed
+        if(Greenfoot.isKeyDown("a") == true)
+        {
+            //move the actor to the left
+            move(-5);
+        }
+        //when the W key is pressed
+        if(Greenfoot.isKeyDown("w") == true)
+        {
+            //move the actor up
+            setLocation(getX(),getY()-5);
+        } 
+        //when the S key is pressed
+        if(Greenfoot.isKeyDown("s") == true)
+        {
+            //move the actor down
+            setLocation(getX(),getY()+5);
+        }
+        //when the K key is pressed
+        //if idx is 1 the k key is down and the game has started, shoot one bullet
+        if(Greenfoot.isKeyDown("k") == true && gameStart == true && index == 1)
+        {
+            //fire bullets
+            getWorld().addObject(new ChungusBullet(),getX(),getY());
+        }
+        //if idx is 0, the k key is down, and the game has started, shoot 2 bullets
+        else if(Greenfoot.isKeyDown("k") == true && gameStart == true && index == 0)
+        {
+            
+            
+             getWorld().addObject(new ChungusBullet(),getX()-10,getY());
+             getWorld().addObject(new ChungusBullet(),getX()+10,getY());
+           
+        }
     }    
 }
