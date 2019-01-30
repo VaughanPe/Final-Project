@@ -2,7 +2,8 @@
 comment0.target=ChungusBullet
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ ChungusBullet\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ checkHit()
+comment1.target=void\ checkHitChungusBullet()
+comment1.text=\r\n\ Method\ checkHitChungusBullet\r\n\ Checks\ whether\ the\ bullet\ has\ hit\ the\ enemy\ or\ the\ top\ of\ the\ world.\r\n\ If\ it\ hits\ the\ enemy\ it\ adds\ 1\ point\ to\ your\ score\ (1000\ points\ to\ win)\ and\ deletes\ the\ object.\r\n\ If\ it\ hits\ the\ top\ of\ the\ world\ it\ deletes\ the\ object.\r\n
 comment2.params=
 comment2.target=ChungusBullet()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ ChungusBullet\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

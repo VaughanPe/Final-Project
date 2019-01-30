@@ -8,8 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ChungusBullet extends Chungus
 {
-    public void checkHit()
+    /**
+     * Method checkHitChungusBullet
+     * Checks whether the bullet has hit the enemy or the top of the world.
+     * If it hits the enemy it adds 1 point to your score (1000 points to win) and deletes the object.
+     * If it hits the top of the world it deletes the object.
+     */
+    public void checkHitChungusBullet()
     {
+        
         //Checks if the bullet has hit the enemy and updates it's hp
         if(isTouching(ChungusHunter.class) == true)
         {
@@ -40,7 +47,7 @@ public class ChungusBullet extends Chungus
         //moves the bullet up continuously
         setLocation(getX(),getY()-15);
         //checks if it has hit the enemy and takes away health if it has
-        checkHit();
+        checkHitChungusBullet();
         
     }    
 }

@@ -18,14 +18,36 @@ public class Bullet extends Actor
         getImage().scale(30,30);
 
     }
+     
     /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Method checkLose
+     * Checks if the player's health is below 0
+     * If it is it displays a message telling them they lost and stops the program.
      */
-    public void act() 
+    public void checkLose()
     {
-        move(5);
+        
+        HealthBar health = (HealthBar)getWorld().getObjects(HealthBar.class).get(0);
+        //if your health is zero
+        if(health.getCurrent() == 0)
+        {
 
+            //place text telling the player they lost
+            getWorld().showText("You Lose",getWorld().getWidth()/2,getWorld().getHeight()/2);
+            //stop the program
+            Greenfoot.stop();
+        }
+    }
+
+    /**
+     * Method checkHit
+     * Checks if the bullet is touching the player
+     * If it is, it takes away 1 from the health bar and deletes the object.
+     * If it's touching the bottom of the world, it deletes the object.
+     */
+    private void checkHit()
+    {
+        
         HealthBar health = (HealthBar)getWorld().getObjects(HealthBar.class).get(0);
         //if bullet is touching chungus
         if(isTouching(Chungus.class) == true)
@@ -42,16 +64,18 @@ public class Bullet extends Actor
             //delete the object touching the bottom
             getWorld().removeObject(this);
         }
+    }
 
-        //if your health is zero
-        if(health.getCurrent() == 0)
-        {
+    /**
+     * Act - do whatever the Bullet wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        move(5);
 
-            //place text telling the player they lost
-            getWorld().showText("You Lose",getWorld().getWidth()/2,getWorld().getHeight()/2);
-            //stop the program
-            Greenfoot.stop();
-        }
+        checkHit();
+        checkLose();
 
     }    
 }

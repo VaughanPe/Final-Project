@@ -8,20 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BigBullet extends Actor
 {
-    /**
-     * Act - do whatever the BigBullet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+    /**    
+     * Sets the size of the image and sets the way it's facing.
      */
     public BigBullet()
     {
         getImage().scale(200,200);
         setRotation(180);
     }
-
-    public void act() 
+    
+    /**
+     * Method checkTouching
+     * Checks if the objects is touching the player or one of it's bullets.
+     * If it is it takes away 3 health from the health bar.
+     */
+    private void checkHitBigBullet()
     {
-
-        setLocation(getWorld().getWidth()/2,getY()+10);
+        
         HealthBar health = (HealthBar)getWorld().getObjects(HealthBar.class).get(0);
         if(isTouching(Chungus.class) == true)
         {
@@ -38,5 +41,12 @@ public class BigBullet extends Actor
             //delete the object touching the bottom
             getWorld().removeObject(this);
         }
+    }
+    public void act() 
+    {
+
+        setLocation(getWorld().getWidth()/2,getY()+10);
+        
+        checkHitBigBullet();
     }    
 }

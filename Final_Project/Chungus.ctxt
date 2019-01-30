@@ -2,8 +2,20 @@
 comment0.target=Chungus
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Chungus\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=Chungus()
+comment1.target=void\ gameStart()
+comment1.text=\r\n\ Method\ gameStart\r\n\ Tells\ the\ actor\ the\ game\ has\ started\ when\ the\ space\ key\ is\ pressed.\r\n
 comment2.params=
-comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Chungus\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=3
+comment2.target=Chungus()
+comment3.params=
+comment3.target=void\ characterSwitch()
+comment3.text=\r\n\ Method\ characterSwitch\r\n\ Switches\ your\ character\ between\ 2\ images\ when\ q\ and\ e\ are\ pressed.\r\n
+comment4.params=
+comment4.target=void\ fire()
+comment4.text=\r\n\ Method\ fire\r\n\ Fires\ bullets\ from\ the\ players\ location\ when\ the\ k\ key\ is\ pressed.\r\n\ When\ second\ character\ is\ being\ used,\ activates\ second\ firing\ mode\ (multiple\ bullets,\ wider\ spread).\r\n
+comment5.params=
+comment5.target=void\ movement()
+comment5.text=\r\n\ Method\ movement\r\n\ Moves\ the\ character\ up,\ left,\ right,\ and\ down\ then\ the\ WASD\ keys\ are\ pressed.\r\n\ W\ \=\ up.\r\n\ S\ \=\ down.\r\n\ A\ \=\ left.\r\n
+comment6.params=
+comment6.target=void\ act()
+comment6.text=\r\n\ Act\ -\ do\ whatever\ the\ Chungus\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=7

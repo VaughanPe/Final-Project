@@ -10,10 +10,12 @@ public class ScoreBoard extends Actor
 {
     public int points;
     private BigBullet big = new BigBullet();
-    private SideBullet side = new SideBullet();
+    
     private Font font = new Font("Times New Roman",20);
+    
     public ScoreBoard()
     {
+        
         //sets the default point number
         points = 0;
         //adds a new image
@@ -27,9 +29,15 @@ public class ScoreBoard extends Actor
         //sets the image of the object to the text
         setImage(picture);
     }
-
+    
+    /**
+     * Method addToScore
+     * Adds points when other classes tell it to until it gets to 1000.
+     * When the points get to 1000 it displays Victory text and stops the program.
+     */
     public void addToScore()
     {
+        
         points++;
         GreenfootImage picture = getImage();
         picture.clear();
@@ -49,13 +57,17 @@ public class ScoreBoard extends Actor
             Greenfoot.stop();
         }
     }
-
+    
     /**
-     * Act - do whatever the ScoreBoard wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Method bigBulletUse
+     * Checks if points is over 250.
+     * If it is, it gets a random number out of 1000.
+     * If this number is equal to 1 it adds a BigBullet object to the world.
      */
-    public void act() 
+    private void bigBulletUse()
     {
+        
+        
         //if the hunter is down past 250 points,
         if(points > 250)
         {
@@ -66,21 +78,15 @@ public class ScoreBoard extends Actor
                 getWorld().addObject(new BigBullet(),getWorld().getWidth(),getWorld().getHeight()/2-240);
             }
         }
-        //if the hunter is down past 750 points,
-        if(points > 750)
-        {
-            //if this random number is below or equal to 5
-            if(Greenfoot.getRandomNumber(1000) <= 5)
-            {
-                //add a side bullet object to the left side of the world
-                getWorld().addObject(new SideBullet(),0,getWorld().getHeight()/2+200);
-            }
-            //if this random number is below or equal to 15
-            else if(Greenfoot.getRandomNumber(1000)+10 <= 15)
-            {
-                //add a side bullet object to the right side of the world
-                getWorld().addObject(new SideBullet(),800,getWorld().getHeight()/2+200);
-            }
         }
+    /**
+     * Act - do whatever the ScoreBoard wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        addToScore();
+        bigBulletUse();
+        
     }    
 }
