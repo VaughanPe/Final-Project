@@ -47,15 +47,7 @@ public class Bullet extends Actor
             //delete the object touching the bottom
             getWorld().removeObject(this);
         }
-        //if your health is zero
-        if(health.getCurrent() == 0)
-        {
-
-            //place text telling the player they lost
-            getWorld().showText("You Lose",getWorld().getWidth()/2,getWorld().getHeight()/2);
-            //stop the program
-            Greenfoot.stop();
-        }
+        
     }
 
     /**

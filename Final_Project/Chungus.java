@@ -121,6 +121,10 @@ public class Chungus extends Actor
             //move the actor down
             setLocation(getX(),getY()+5);
         }
+        if(getY() < 150)
+        {
+            setLocation(400,600);
+            }
     }
 
     /**

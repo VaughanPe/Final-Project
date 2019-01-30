@@ -130,8 +130,9 @@ public class ChungusWorld extends World
     }
     private void checkLose()
     {
-        HealthBar health = getObjects(HealthBar.class).get(0);
+                HealthBar health = getObjects(HealthBar.class).get(0);
         //if your health is zero
+
         if(health.getCurrent() == 0)
         {
 
@@ -149,7 +150,7 @@ public class ChungusWorld extends World
         nameCount();
         startMessage();
         startGame();
-        checkLose();
+        
         
         
     }
