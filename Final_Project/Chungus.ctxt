@@ -14,7 +14,7 @@ comment4.target=void\ fire()
 comment4.text=\r\n\ Method\ fire\r\n\ Fires\ bullets\ from\ the\ players\ location\ when\ the\ k\ key\ is\ pressed.\r\n\ When\ second\ character\ is\ being\ used,\ activates\ second\ firing\ mode\ (multiple\ bullets,\ wider\ spread).\r\n
 comment5.params=
 comment5.target=void\ movement()
-comment5.text=\r\n\ Method\ movement\r\n\ Moves\ the\ character\ up,\ left,\ right,\ and\ down\ then\ the\ WASD\ keys\ are\ pressed.\r\n\ W\ \=\ up.\r\n\ S\ \=\ down.\r\n\ A\ \=\ left.\r\n
+comment5.text=\r\n\ Method\ movement\r\n\ Moves\ the\ character\ up,\ left,\ right,\ and\ down\ then\ the\ WASD\ keys\ are\ pressed.\r\n\ W\ \=\ up.\r\n\ S\ \=\ down.\r\n\ A\ \=\ left.\r\n\ D\ \=\ right.\r\n
 comment6.params=
 comment6.target=void\ act()
 comment6.text=\r\n\ Act\ -\ do\ whatever\ the\ Chungus\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

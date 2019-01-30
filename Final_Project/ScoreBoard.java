@@ -85,7 +85,7 @@ public class ScoreBoard extends Actor
      */
     public void act() 
     {
-        addToScore();
+        
         bigBulletUse();
         
     }    

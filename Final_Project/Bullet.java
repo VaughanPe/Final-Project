@@ -19,25 +19,7 @@ public class Bullet extends Actor
 
     }
      
-    /**
-     * Method checkLose
-     * Checks if the player's health is below 0
-     * If it is it displays a message telling them they lost and stops the program.
-     */
-    public void checkLose()
-    {
-        
-        HealthBar health = (HealthBar)getWorld().getObjects(HealthBar.class).get(0);
-        //if your health is zero
-        if(health.getCurrent() == 0)
-        {
-
-            //place text telling the player they lost
-            getWorld().showText("You Lose",getWorld().getWidth()/2,getWorld().getHeight()/2);
-            //stop the program
-            Greenfoot.stop();
-        }
-    }
+    
 
     /**
      * Method checkHit
@@ -64,6 +46,15 @@ public class Bullet extends Actor
             //delete the object touching the bottom
             getWorld().removeObject(this);
         }
+        //if your health is zero
+        if(health.getCurrent() == 0)
+        {
+
+            //place text telling the player they lost
+            getWorld().showText("You Lose",getWorld().getWidth()/2,getWorld().getHeight()/2);
+            //stop the program
+            Greenfoot.stop();
+        }
     }
 
     /**
@@ -72,10 +63,11 @@ public class Bullet extends Actor
      */
     public void act() 
     {
+        
         move(5);
-
+        
         checkHit();
-        checkLose();
+        
 
     }    
 }
