@@ -26,6 +26,7 @@ public class Bullet extends Actor
      * Checks if the bullet is touching the player
      * If it is, it takes away 1 from the health bar and deletes the object.
      * If it's touching the bottom of the world, it deletes the object.
+     * If points gets to 1000 it ends the game and displays Victory text, then stops the scenario.
      */
     private void checkHit()
     {
