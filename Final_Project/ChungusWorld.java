@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * Author: Vaughan Pelletier
  * Last edited: 1/29/2019
  * (Changing characters is a hidden feature)
- * (i was unable to figure out a way to use a loop here)
+ * 
  */
 public class ChungusWorld extends World
 {

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ChungusWorld
-comment0.text=\r\n\ \r\n\ \r\n\ Author\:\ Vaughan\ Pelletier\r\n\ Last\ edited\:\ 1/29/2019\r\n\ (Changing\ characters\ is\ a\ hidden\ feature)\r\n\ (i\ was\ unable\ to\ figure\ out\ a\ way\ to\ use\ a\ loop\ here)\r\n
+comment0.text=\r\n\ \r\n\ \r\n\ Author\:\ Vaughan\ Pelletier\r\n\ Last\ edited\:\ 1/29/2019\r\n\ (Changing\ characters\ is\ a\ hidden\ feature)\r\n\ \r\n
 comment1.params=
 comment1.target=ChungusWorld()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ChungusWorld.\r\n\ Adds\ the\ basic\ objects\ to\ the\ world\ so\ the\ game\ can\ begin.\r\n
